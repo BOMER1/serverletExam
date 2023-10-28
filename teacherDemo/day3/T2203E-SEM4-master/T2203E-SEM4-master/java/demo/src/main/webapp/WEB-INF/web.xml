@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+    <servlet>
+        <servlet-name>helloServlet</servlet-name>
+        <servlet-class>com.example.demo.HelloServlet</servlet-class>
+        <init-param>
+            <param-name>name</param-name>
+            <param-value>T2203E FPT Aptech Ha Noi</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>helloServlet</servlet-name>
+        <url-pattern>/hello-servlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>demoServlet</servlet-name>
+        <servlet-class>com.example.demo.DemoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>demoServlet</servlet-name>
+        <url-pattern>/demo-servlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>testServlet</servlet-name>
+        <servlet-class>com.example.demo.TestServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>testServlet</servlet-name>
+        <url-pattern>/test-servlet</url-pattern>
+    </servlet-mapping>
+
+    <filter>
+        <filter-name>filter1</filter-name>
+        <filter-class>com.example.demo.filter.Filter1</filter-class>
+    </filter>
+    <filter>
+        <filter-name>filter2</filter-name>
+        <filter-class>com.example.demo.filter.Filter2</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>filter2</filter-name>
+        <url-pattern>/demo-servlet</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>filter1</filter-name>
+        <url-pattern>/hello-servlet</url-pattern>
+        <url-pattern>/demo-servlet</url-pattern>
+    </filter-mapping>
+
+
+</web-app>
